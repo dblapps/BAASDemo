@@ -1,0 +1,11 @@
+{
+	"type": "dpdapn",
+	"cert": "/Users/dblevi/Projects/BAASDemoCerts/BAASDemoDevAPNCert.pem",
+	"key": "/Users/dblevi/Projects/BAASDemoCerts/BAASDemoDevAPNCertKey.pem",
+	"passphrase": "",
+	"defaultMsg": "",
+	"badge": "",
+	"sound": "",
+	"sandbox": true,
+	"contentAvailable": true
+}
