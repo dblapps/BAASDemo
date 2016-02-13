@@ -7,8 +7,8 @@
 //
 
 #import "Notes.h"
-#import <CloudKit/CloudKit.h>
 #import <UIKit/UIKit.h>
+#import <CloudKit/CloudKit.h>
 
 static NSString* kSubscribed = @"com.dblapps.BAASDemo.Subscribed";
 
@@ -118,11 +118,7 @@ void performBlock(void(^block)(void))
 	CKQuery* query = [[CKQuery alloc] initWithRecordType:@"Notes" predicate:[NSPredicate predicateWithFormat:@"TRUEPREDICATE"]];
 	query.sortDescriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc]initWithKey:@"creationDate" ascending:true]];
 	[database performQuery:query inZoneWithID:nil completionHandler:^(NSArray<CKRecord*>* results, NSError* error) {
-		if (error != nil) {
-			performBlock(^() {
-				[[NSNotificationCenter defaultCenter] postNotificationName:NotesLoadFailedNotification object:error];
-			});
-		} else {
+		if (error == nil) {
 			for (CKRecord* record in results) {
 				Note* note = [[Note alloc] init];
 				note.text = [record objectForKey:@"Note"];
@@ -133,6 +129,10 @@ void performBlock(void(^block)(void))
 			}
 			performBlock(^() {
 				[[NSNotificationCenter defaultCenter] postNotificationName:NotesLoadSucceededNotification object:nil];
+			});
+		} else {
+			performBlock(^() {
+				[[NSNotificationCenter defaultCenter] postNotificationName:NotesLoadFailedNotification object:error];
 			});
 		}
 	}];

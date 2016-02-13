@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "BAASDemo": {
+      "applicationId": "cvEnY7HzNIV1Vxx8Wy0NZQHq9u21Jk3i6aL0Kr9p"
+    },
+    "_default": {
+      "link": "BAASDemo"
+    }
+  }
+}
