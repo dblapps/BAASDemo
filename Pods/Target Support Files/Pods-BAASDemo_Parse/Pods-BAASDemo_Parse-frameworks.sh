@@ -84,12 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-BAASDemo/AFNetworkActivityLogger.framework"
-  install_framework "Pods-BAASDemo/AFNetworking.framework"
-  install_framework "Pods-BAASDemo/JGProgressHUD.framework"
+  install_framework "Pods-BAASDemo_Parse/JGProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-BAASDemo/AFNetworkActivityLogger.framework"
-  install_framework "Pods-BAASDemo/AFNetworking.framework"
-  install_framework "Pods-BAASDemo/JGProgressHUD.framework"
+  install_framework "Pods-BAASDemo_Parse/JGProgressHUD.framework"
 fi

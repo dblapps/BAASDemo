@@ -1,0 +1,6 @@
+framework module Pods_BAASDemo_Cloudkit {
+  umbrella header "Pods-BAASDemo_Cloudkit-umbrella.h"
+
+  export *
+  module * { export * }
+}

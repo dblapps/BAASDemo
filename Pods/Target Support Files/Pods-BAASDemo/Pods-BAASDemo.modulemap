@@ -1,6 +1,0 @@
-framework module Pods_BAASDemo {
-  umbrella header "Pods-BAASDemo-umbrella.h"
-
-  export *
-  module * { export * }
-}

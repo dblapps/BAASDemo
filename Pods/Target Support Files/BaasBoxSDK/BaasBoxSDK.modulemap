@@ -1,0 +1,6 @@
+framework module BaasBoxSDK {
+  umbrella header "BaasBoxSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

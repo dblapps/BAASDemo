@@ -23,16 +23,19 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BaasBoxSDK (0.9.0)
   - JGProgressHUD (1.3.1)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
   - AFNetworking
+  - BaasBoxSDK (~> 0.9.0)
   - JGProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BaasBoxSDK: 56dc8b1a0b38adb404e64a32e1ed34037a3e9aa2
   JGProgressHUD: 153053a21d81208cb5f659691996bcefce6a9885
 
 COCOAPODS: 0.39.0

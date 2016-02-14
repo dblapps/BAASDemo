@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00725FE56926A8A09792F8F4 /* Pods_BAASDemo_Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F17480219CC87BA68B2F516D /* Pods_BAASDemo_Parse.framework */; };
+		297D41E11CF7965C97D1AA01 /* Pods_BAASDemo_Cloudkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDA353C56BE74E0F441D015 /* Pods_BAASDemo_Cloudkit.framework */; };
 		4C6A4DDC1C5EEFDD00CF5AD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A4DDB1C5EEFDD00CF5AD7 /* main.m */; };
 		4C6A4DDF1C5EEFDD00CF5AD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A4DDE1C5EEFDD00CF5AD7 /* AppDelegate.m */; };
 		4C6A4DE21C5EEFDD00CF5AD7 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A4DE11C5EEFDD00CF5AD7 /* MasterViewController.m */; };
@@ -61,7 +63,9 @@
 		4C783C171C6FB6EB0076E3E0 /* Parse_Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C783BCC1C6FB10B0076E3E0 /* Parse_Notes.m */; };
 		4C783C181C6FB6F00076E3E0 /* BAASBox_Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C783BCB1C6FB10B0076E3E0 /* BAASBox_Notes.m */; };
 		4C783C1A1C6FC0720076E3E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C783C191C6FC0720076E3E0 /* StoreKit.framework */; };
+		72028145BDF2C1F592D3887C /* Pods_BAASDemo_Deployd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E2AD30B8C2E84020E2A23D /* Pods_BAASDemo_Deployd.framework */; };
 		8B1BBF0638332060300B3B58 /* Pods_BAASDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44F1645297C842EF01B167B /* Pods_BAASDemo.framework */; };
+		D4F64FEA0D87DC57A05F67EC /* Pods_BAASDemo_BAASBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1CCC3F038B208B759DFA5 /* Pods_BAASDemo_BAASBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07E0E8148B9A13D83AFDE5AC /* Pods-BAASDemo_BAASBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_BAASBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_BAASBox/Pods-BAASDemo_BAASBox.debug.xcconfig"; sourceTree = "<group>"; };
+		0F32CDDBEED1C2D6E819BE87 /* Pods-BAASDemo_Cloudkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_Cloudkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_Cloudkit/Pods-BAASDemo_Cloudkit.release.xcconfig"; sourceTree = "<group>"; };
+		0FDA353C56BE74E0F441D015 /* Pods_BAASDemo_Cloudkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAASDemo_Cloudkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C18C0411C60577B00062990 /* Notes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
 		4C6A4DD71C5EEFDD00CF5AD7 /* BAASDemo_Cloudkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAASDemo_Cloudkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6A4DDB1C5EEFDD00CF5AD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,8 +138,17 @@
 		4C783C0C1C6FB6100076E3E0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C783C191C6FC0720076E3E0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		68D8DA8CBB653D8567AD45FD /* Pods-BAASDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo.release.xcconfig"; sourceTree = "<group>"; };
+		79B1D7ECE356E1A8E40E65BC /* Pods-BAASDemo_BAASBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_BAASBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_BAASBox/Pods-BAASDemo_BAASBox.release.xcconfig"; sourceTree = "<group>"; };
+		7EB6FA96118BDFC480D5DAB6 /* Pods-BAASDemo_Deployd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_Deployd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_Deployd/Pods-BAASDemo_Deployd.debug.xcconfig"; sourceTree = "<group>"; };
+		81E2AD30B8C2E84020E2A23D /* Pods_BAASDemo_Deployd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAASDemo_Deployd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8888C03EEF19492D914A1E3B /* Pods-BAASDemo_Parse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_Parse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_Parse/Pods-BAASDemo_Parse.debug.xcconfig"; sourceTree = "<group>"; };
 		9868368939FDAB5D6AD7F5B6 /* Pods-BAASDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A18CA9E8767C392F35A8EB74 /* Pods-BAASDemo_Parse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_Parse.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_Parse/Pods-BAASDemo_Parse.release.xcconfig"; sourceTree = "<group>"; };
+		BE1A878F767502ACFBE812D1 /* Pods-BAASDemo_Cloudkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_Cloudkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_Cloudkit/Pods-BAASDemo_Cloudkit.debug.xcconfig"; sourceTree = "<group>"; };
 		C44F1645297C842EF01B167B /* Pods_BAASDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAASDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB1CCC3F038B208B759DFA5 /* Pods_BAASDemo_BAASBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAASDemo_BAASBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17480219CC87BA68B2F516D /* Pods_BAASDemo_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAASDemo_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF069950774448EF44C8D2DF /* Pods-BAASDemo_Deployd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAASDemo_Deployd.release.xcconfig"; path = "Pods/Target Support Files/Pods-BAASDemo_Deployd/Pods-BAASDemo_Deployd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +158,7 @@
 			files = (
 				8B1BBF0638332060300B3B58 /* Pods_BAASDemo.framework in Frameworks */,
 				4C783BCA1C6F99BD0076E3E0 /* CloudKit.framework in Frameworks */,
+				297D41E11CF7965C97D1AA01 /* Pods_BAASDemo_Cloudkit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C74576F1C69458200A06AD4 /* Pods_BAASDemo.framework in Frameworks */,
+				72028145BDF2C1F592D3887C /* Pods_BAASDemo_Deployd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C783BD61C6FB12E0076E3E0 /* Pods_BAASDemo.framework in Frameworks */,
+				D4F64FEA0D87DC57A05F67EC /* Pods_BAASDemo_BAASBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +215,7 @@
 				4C783BFD1C6FB5710076E3E0 /* Bolts.framework in Frameworks */,
 				4C783C011C6FB5710076E3E0 /* ParseTwitterUtils.framework in Frameworks */,
 				4C783C001C6FB5710076E3E0 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				00725FE56926A8A09792F8F4 /* Pods_BAASDemo_Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +306,14 @@
 			children = (
 				9868368939FDAB5D6AD7F5B6 /* Pods-BAASDemo.debug.xcconfig */,
 				68D8DA8CBB653D8567AD45FD /* Pods-BAASDemo.release.xcconfig */,
+				07E0E8148B9A13D83AFDE5AC /* Pods-BAASDemo_BAASBox.debug.xcconfig */,
+				79B1D7ECE356E1A8E40E65BC /* Pods-BAASDemo_BAASBox.release.xcconfig */,
+				BE1A878F767502ACFBE812D1 /* Pods-BAASDemo_Cloudkit.debug.xcconfig */,
+				0F32CDDBEED1C2D6E819BE87 /* Pods-BAASDemo_Cloudkit.release.xcconfig */,
+				7EB6FA96118BDFC480D5DAB6 /* Pods-BAASDemo_Deployd.debug.xcconfig */,
+				FF069950774448EF44C8D2DF /* Pods-BAASDemo_Deployd.release.xcconfig */,
+				8888C03EEF19492D914A1E3B /* Pods-BAASDemo_Parse.debug.xcconfig */,
+				A18CA9E8767C392F35A8EB74 /* Pods-BAASDemo_Parse.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -311,6 +339,10 @@
 				4C783BFC1C6FB5710076E3E0 /* ParseUI.framework */,
 				4C783BC91C6F99BD0076E3E0 /* CloudKit.framework */,
 				C44F1645297C842EF01B167B /* Pods_BAASDemo.framework */,
+				CEB1CCC3F038B208B759DFA5 /* Pods_BAASDemo_BAASBox.framework */,
+				0FDA353C56BE74E0F441D015 /* Pods_BAASDemo_Cloudkit.framework */,
+				81E2AD30B8C2E84020E2A23D /* Pods_BAASDemo_Deployd.framework */,
+				F17480219CC87BA68B2F516D /* Pods_BAASDemo_Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -595,7 +627,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_Deployd/Pods-BAASDemo_Deployd-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C7457761C69458200A06AD4 /* Copy Pods Resources */ = {
@@ -610,7 +642,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_Deployd/Pods-BAASDemo_Deployd-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C783BCE1C6FB12E0076E3E0 /* Check Pods Manifest.lock */ = {
@@ -640,7 +672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_BAASBox/Pods-BAASDemo_BAASBox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C783BDC1C6FB12E0076E3E0 /* Copy Pods Resources */ = {
@@ -655,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_BAASBox/Pods-BAASDemo_BAASBox-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C783BE31C6FB14C0076E3E0 /* Check Pods Manifest.lock */ = {
@@ -685,7 +717,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_Parse/Pods-BAASDemo_Parse-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C783BF11C6FB14C0076E3E0 /* Copy Pods Resources */ = {
@@ -700,7 +732,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_Parse/Pods-BAASDemo_Parse-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58608438741DB164967EA79C /* Copy Pods Resources */ = {
@@ -715,7 +747,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_Cloudkit/Pods-BAASDemo_Cloudkit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6226C908ACD0A6F61D39CBCC /* Check Pods Manifest.lock */ = {
@@ -745,7 +777,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo/Pods-BAASDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BAASDemo_Cloudkit/Pods-BAASDemo_Cloudkit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -934,7 +966,7 @@
 		};
 		4C6A4E081C5EEFDE00CF5AD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9868368939FDAB5D6AD7F5B6 /* Pods-BAASDemo.debug.xcconfig */;
+			baseConfigurationReference = BE1A878F767502ACFBE812D1 /* Pods-BAASDemo_Cloudkit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAASDemo_Cloudkit.entitlements;
@@ -955,7 +987,7 @@
 		};
 		4C6A4E091C5EEFDE00CF5AD7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68D8DA8CBB653D8567AD45FD /* Pods-BAASDemo.release.xcconfig */;
+			baseConfigurationReference = 0F32CDDBEED1C2D6E819BE87 /* Pods-BAASDemo_Cloudkit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAASDemo_Cloudkit.entitlements;
@@ -1024,7 +1056,7 @@
 		};
 		4C7457781C69458200A06AD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9868368939FDAB5D6AD7F5B6 /* Pods-BAASDemo.debug.xcconfig */;
+			baseConfigurationReference = 7EB6FA96118BDFC480D5DAB6 /* Pods-BAASDemo_Deployd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1044,7 +1076,7 @@
 		};
 		4C7457791C69458200A06AD4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68D8DA8CBB653D8567AD45FD /* Pods-BAASDemo.release.xcconfig */;
+			baseConfigurationReference = FF069950774448EF44C8D2DF /* Pods-BAASDemo_Deployd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1064,7 +1096,7 @@
 		};
 		4C783BDE1C6FB12E0076E3E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9868368939FDAB5D6AD7F5B6 /* Pods-BAASDemo.debug.xcconfig */;
+			baseConfigurationReference = 07E0E8148B9A13D83AFDE5AC /* Pods-BAASDemo_BAASBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1084,7 +1116,7 @@
 		};
 		4C783BDF1C6FB12E0076E3E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68D8DA8CBB653D8567AD45FD /* Pods-BAASDemo.release.xcconfig */;
+			baseConfigurationReference = 79B1D7ECE356E1A8E40E65BC /* Pods-BAASDemo_BAASBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1104,7 +1136,7 @@
 		};
 		4C783BF31C6FB14C0076E3E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9868368939FDAB5D6AD7F5B6 /* Pods-BAASDemo.debug.xcconfig */;
+			baseConfigurationReference = 8888C03EEF19492D914A1E3B /* Pods-BAASDemo_Parse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1128,7 +1160,7 @@
 		};
 		4C783BF41C6FB14C0076E3E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68D8DA8CBB653D8567AD45FD /* Pods-BAASDemo.release.xcconfig */;
+			baseConfigurationReference = A18CA9E8767C392F35A8EB74 /* Pods-BAASDemo_Parse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
