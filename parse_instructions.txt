@@ -1,0 +1,117 @@
+=============================================================
+Prepare for using Parse:
+=============================================================
+
+Go to http://parse.com before starting, and create an account.  Also install the Parse command line tools, as follows:
+
+	curl -s https://www.parse.com/downloads/cloud_code/installer.sh | sudo /bin/bash
+
+Then setup a local account key for CloudCode.  Login to Parse in your browser, and click on your name in the upper right.  Click on Account.  On the account page, click on the Keys tab.  Click on ‘Create and Account Key’, then enter a name for the key (usually a name that identifies your Mac or PC).  Copy the key you are shown and save it.  Now go to a terminal window and enter:
+
+	parse configure accountkey
+
+Enter the account key you generated above.	
+
+
+=============================================================
+Setup the Notes application backend using Parse:
+=============================================================
+
+1.  We are going to use push notifications to notify the app when rows in the backend have been created, updated, or deleted.  Follow the usual steps to generate the certificate on the Apple developer portal.  Download the certificate you created, and install it in Keychain.  Note that this will generate your key.  Now you need to export the certificate and key into a single .p12 file.  In keychain, find the certificate, and click on the small arrow on the left to expand it to show the key.  Now click on the certificate, and then command-click the key, so both are selected.  Now right click the certificate, and choose to export 2 items.  Follow the rest of the process to export as a .p12 file.
+
+1.
+Login to Parse and go to your dashboard.
+
+2.
+Create Notes application:
+	a. Click on ‘Create a new App’ at the top middle of the page.
+	b. Enter ‘Notes’ as the name, and click Create
+
+3.
+Create the Notes class:
+	a. In the dashboard for your Notes app, click on Core in the top tab bar.
+	b. Click on Data in the left panel, then click on “+ Add Class”.  Select Custom for the type, enter Notes for the name, and click Create Class
+	c. Click on “+ Col”, select String for the type, and enter “note” for the column name.  Click on Create Column.
+	d. Repeat step c., but enter “name” for the column name.
+
+4.
+Setup for sending push notifications:
+	a. In the dashboard for your Notes app, click Settings in the top tab bar.
+	b. Click Push in the left panel
+	c. Under the Apple Push Certificates section, click on ‘Select your certificate’
+	d. Select the .p12 file you created earlier, and click Open
+
+5.
+Setup CloudCode in your application
+
+	a. Enter the following command to setup CloudCode:
+
+		parse new
+
+	   Answer the questions as follows:
+
+		New or existing app:  enter ‘e’ for existing
+		Select app:  enter the number for the Notes app (it should be listed, if not, go back to step 1 above)
+		Provider for hosting:  select ‘2’ for Parse
+		Enter a folder name which will contain your CloudCode files (suggest using ‘notes’)
+		Hit Enter again
+
+	b.  Change directory to the folder name you entered above, e.g., “cd notes”
+	c.  Edit the file cloud/main.js, and enter the following code:
+
+		Parse.Cloud.afterSave("Notes", function(request) {
+		  var pushQuery = new Parse.Query(Parse.Installation);
+		  pushQuery.equalTo('deviceType', 'ios');
+		  Parse.Push.send({
+		    where: pushQuery, // Set our Installation query
+		    data: {
+		      "badge": "0",
+		      "content-available": 1,
+		      "n": {
+		        "t": request.object.existed() ? "upd" : "add",
+		        "id": request.object.id
+		      }
+		    }
+		  }, {
+		    success: function() {
+		      // Push was successful
+		    },
+		    error: function(error) {
+		      throw "Got an error " + error.code + " : " + error.message;
+		    }
+		  });
+		});
+ 
+		Parse.Cloud.afterDelete("Notes", function(request) {
+		  var pushQuery = new Parse.Query(Parse.Installation);
+		  pushQuery.equalTo('deviceType', 'ios');
+		  Parse.Push.send({
+		    where: pushQuery, // Set our Installation query
+		    data: {
+		      "badge": "0",
+		      "content-available": 1,
+		      "n": {
+		        "t": "del",
+		        "id": request.object.id
+		      }
+		    }
+		  }, {
+		    success: function() {
+		      // Push was successful
+		    },
+		    error: function(error) {
+		      throw "Got an error " + error.code + " : " + error.message;
+		    }
+		  });
+		});
+
+	    This adds triggers that are called after any row in the Notes class is saved or deleted.
+
+	d. Deploy the updated CloudCode to your app:
+
+		parse deploy
+
+
+
+
+

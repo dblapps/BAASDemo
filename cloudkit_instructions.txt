@@ -1,0 +1,23 @@
+=============================================================
+Links for CloudKit:
+=============================================================
+
+1.
+CloudKit dashboard http://icloud.developer.apple.com/dashboard/
+
+Note that if your iOS developer account is a member of multiple teams, and you try to access the dashboard when you are not logged in, you will be returned to the login page after trying to load the CloudKit dashboard.  You must instead first go to http://developer.apple.com, login, select your team, and then go to the link above.
+
+
+=============================================================
+Setup the Notes application backend using CloudKit:
+=============================================================
+
+1.
+First need to create your app in Xcode, enable iCloud in the app’s capabilities, and select CloudKit in the iCloud capability.
+
+2.
+Go to the CloudKit dashboard as above (there is also a button in the iCloud capability section in Xcode to access the dashboard).
+
+3.
+Click on Record Types in the left panel of the dashboard.  Then click on the ‘+’ button to add a new record type.  Enter ‘Notes’ for the record type name.  Then enter ‘Note’ in the field name text box below.  Leave the Field Type as String.  Then click Save at the lower right.
+

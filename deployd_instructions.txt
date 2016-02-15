@@ -1,0 +1,175 @@
+=============================================================
+Links for deployd:
+=============================================================
+
+1.
+Latest version is on github at https://github.com/deployd/deployd
+
+2.
+Documentation is at http://docs.deployd.com/docs/
+
+
+=============================================================
+Setup deployd:
+=============================================================
+
+1.
+Install Node.js and npm (go to nodejs.org, follow instructions there)
+
+2.
+Install mongodb (go to https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/, follow instructions there).  To have mongodb launch at login:
+
+	ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+
+To launch mongodb now:
+
+	launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+
+Or to launch manually as needed:
+
+	mongod --config /usr/local/etc/mongod.conf
+
+3.
+Install deployd:
+
+	sudo npm install deployd -g
+
+Verify version, should be 0.8.8 (or later):
+
+	dpd -V
+
+=============================================================
+Create a deployd application:
+=============================================================
+
+1.
+Basic instructions are on github and at http://docs.deployd.com/docs/getting-started/your-first-api.html
+
+2.
+To open the dashboard, open browser and go to localhost:2403
+
+=============================================================
+Create the Notes application backend using deployd:
+=============================================================
+
+1.
+Create the backend (don’t launch yet):
+
+	dpd create notes
+	cd notes
+	npm link deployd
+
+Note that the last command above will likely generate a bunch of errors about a chmod operation note being permitted. You can ignore these.  That command creates a link to the deployd module within your app, which allows your app to locate some of deployd’s files.
+
+2.
+We will be using push notifications, so need to install the modules for this:
+
+	a.  We’ll install additional modules within our application, so we need a node_modules directory:
+
+		mkdir node_modules
+
+	b.  Install the node ‘apn’ module, which allows push notifications to be send via Apple’s APN services:
+
+		npm install apn
+
+	    Note that you will get the following warnings, which you can safely ignore:
+
+		npm WARN enoent ENOENT: no such file or directory, open '/Users/dblevi/Projects/hello-world/package.json'
+		npm WARN hello-world No description
+		npm WARN hello-world No repository field.
+		npm WARN hello-world No README data
+		npm WARN hello-world No license field.
+
+	c.  Install the ‘dpd-apn’ resource, which allows deployd to access the ‘apn’ module:
+
+		cd node_modules
+		git clone https://github.com/dblapps/dpd-apn.git
+		cd ..
+
+3.
+We will also need a certificate and key for generating push notifications.  Follow the usual steps to generate the certificate on the Apple developer portal.  Download the certificate you created, and install it in Keychain.  Note that this will generate your key.  Now you need to export the certificate and key.  Export these separately by right clicking on each.  Keychain will save as a .p12 file, but you’ll need to convert each to .pem:
+
+	openssl pkcs12 -in <name_of_cert_file>.p12 -out <name_of_cert_file>.pem -nodes
+	openssl pkcs12 -in <name_of_key_file>.p12 -out <name_of_key_file>.pem -nodes
+
+You use the .pem files later when you configure the ‘dpd-apn’ resource in your backend.  Note that if you add a passphrase for the two exported files, you’ll need to use the same passphrase for both.
+ 
+4.
+Launch the backend:
+
+	dpd
+
+5.
+Bring up the dashboard (open browser, go to localhost:2403)
+
+6.
+Create the ‘Notes’ collection:
+
+	a.  Click on the green add resource button, select Collection, enter “/notes”, and click Create
+
+7.
+Add ‘note’ and ‘name’ fields to the Notes collection:
+
+	a.  Click on Notes in the left side menu, then click on Properties
+	b.  At the bottom of the Properties panel, enter ‘note’ in the text field, check the Required box, and click Add
+	c.  Repeat step b. but enter ‘name’ in the text field.
+
+8.
+Create and configure a push notification resource (for now we are configuring a resource to send to the sandbox APN service):
+
+	a.  Click on the green add resource button, select APN, enter ‘apndev’, and click Create
+	b.  Fill out the Properties panel as follows:
+		cert:  Enter the full path to the certificate .pem file you created above in step 3.
+		key:  Enter the full path to the key .pem file you created above in step 3.
+		passphrase:  if you added a passphrase when exporting the cert and key, enter it here.  otherwise leave black
+		defaultMsg:  leave blank
+		badge:  leave blank
+		sound:  leave blank
+		sandbox:  check this (so this resource will send to the sandbox APN service)
+		content-available:  check this (so this resource will send silent push notifications)
+
+9.
+Add event handlers to the Notes collection, these will generate push notifications when entries in the Notes collection are added, updated, or deleted:
+
+	a.  Click on Notes in the left side menu, then click on Events.
+	b.  In the Events panel tab bar, click on ON POST.  Enter the following in the text area:
+		dpd.devices.get(function(result, error) {
+		    var devices = [];
+		    var length = result.length;
+		    for (var i = 0; i < length; i++) {
+		        var device = result[i];
+		        devices.push(device.apnToken);
+		    }
+		    dpd.apndev.post(
+		        {
+		            payload: {
+		                n: {
+		                    t: "add",
+		                    id: this.id
+		                }
+		            },
+		            devices: devices
+		        },
+		        function(result, err) {
+		        }
+		    );
+		});
+	c. Click on the ON PUT tab, enter the same code as above, but change this line:
+		                    t: "add",
+	   To this:
+		                    t: “upd”,
+	d. Click on the ON DELETE tab, enter the same code as above, but change this line:
+		                    t: "add",
+	   To this:
+		                    t: “del”,
+
+10.
+Create a ‘Devices’ collection, which will be used by devices to register with the backend to receive push notifications:
+
+	a. Click on the green add resource button, select Collection, enter “/devices”, and click Create
+	b. At the bottom of the Properties panel, enter ‘apnToken’ in the text field, check the Required box, and click Add 
+
+
+
+
+
