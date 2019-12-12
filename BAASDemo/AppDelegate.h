@@ -13,9 +13,10 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
-	tab1
-		tab2
-	  tab1spaces2
+
+    tab1
+        tab2
+      tab1spaces2
     spaces4
         spaces8
       spaces6
